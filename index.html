@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Óptica Visão Clara - Óculos de Grau, Óculos de Sol e Exames Oftalmológicos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#1e40af',
+                        accent: '#f59e0b',
+                        neutral: '#374151',
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .hero-slide {
+            background-size: cover;
+            background-position: center;
+            transition: background-image 0.5s ease-in-out;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-card {
+            transition: all 0.3s ease;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #2563eb;
+            border-radius: 4px;
+        }
+        
+        .virtual-try-on {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+        }
+        
+        /* Services section animation */
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <img src="https://via.placeholder.com/120x50.png?text=Visão+Clara+Logo" alt="Visão Clara Logo" class="h-12">
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-neutral-700 hover:text-primary font-medium">Início</a>
+                    <a href="#products" class="text-neutral-700 hover:text-primary font-medium">Óculos</a>
+                    <a href="#services" class="text-neutral-700 hover:text-primary font-medium">Serviços</a>
+                    <a href="#about" class="text-neutral-700 hover:text-primary font-medium">Sobre Nós</a>
+                    <a href="#contact" class="text-neutral-700 hover:text-primary font-medium">Contato</a>
+                </nav>
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="text-neutral-700 hover:text-primary">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    <a href="#" class="text-neutral-700 hover:text-primary relative">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="absolute -top-2 -right-2 bg-accent text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">3</span>
+                    </a>
+                    <a href="#" class="md:hidden text-neutral-700">
+                        <i class="fas fa-bars"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative">
+        <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1500&q=80'); height: 80vh; background-attachment: fixed;">
+            <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+            <div class="container mx-auto h-full flex items-center relative z-10 px-4">
+                <div class="max-w-xl text-white">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Ver o mundo com clareza nunca foi tão elegante</h1>
+                    <p class="text-xl mb-6">Coleção exclusiva de óculos de grau e sol com tecnologia de ponta para sua visão e estilo.</p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#products" class="bg-primary hover:bg-secondary text-white font-bold py-3 px-6 rounded-lg text-center transition duration-300">Comprar Óculos</a>
+                        <a href="#services" class="bg-white hover:bg-gray-100 text-primary font-bold py-3 px-6 rounded-lg text-center transition duration-300">Agendar Exame</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section class="bg-gray-100 py-12">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl md:text-3xl font-bold text-neutral-800 text-center mb-8">Marcas Parceiras</h2>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-8">
+                <img src="https://via.placeholder.com/150x80.png?text=Ray-Ban" alt="Ray-Ban" class="h-16 object-contain opacity-80 hover:opacity-100 transition">
+                <img src="https://via.placeholder.com/150x80.png?text=Oakley" alt="Oakley" class="h-16 object-contain opacity-80 hover:opacity-100 transition">
+                <img src="https://via.placeholder.com/150x80.png?text=Versace" alt="Versace" class="h-16 object-contain opacity-80 hover:opacity-100 transition">
+                <img src="https://via.placeholder.com/150x80.png?text=Prada" alt="Prada" class="h-16 object-contain opacity-80 hover:opacity-100 transition">
+                <img src="https://via.placeholder.com/150x80.png?text=Gucci" alt="Gucci" class="h-16 object-contain opacity-80 hover:opacity-100 transition">
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-neutral-800 mb-4">Nossos Óculos</h2>
+                <p class="text-neutral-600 max-w-3xl mx-auto">Selecione entre nossa ampla variedade de óculos de grau e sol, das melhores marcas com tecnologia de ponta.</p>
+            </div>
+            
+            <!-- Filter Tabs -->
+            <div class="flex justify-center mb-8">
+                <div class="inline-flex rounded-md shadow-sm" role="group">
+                    <button type="button" class="px-4 py-2 text-sm font-medium rounded-l-lg border border-gray-300 bg-white text-neutral-700 hover:bg-gray-50 focus:z-10">
+                        Todos
+                    </button>
+                    <button type="button" class="px-4 py-2 text-sm font-medium border-t border-b border-gray-300 bg-white text-neutral-700 hover:bg-gray-50 focus:z-10">
+                        Óculos de Grau
+                    </button>
+                    <button type="button" class="px-4 py-2 text-sm font-medium rounded-r-lg border border-gray-300 bg-white text-neutral-700 hover:bg-gray-50 focus:z-10">
+                        Óculos de Sol
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Filters -->
+            <div class="mb-8">
+                <div class="flex flex-wrap gap-4 justify-center">
+                    <select class="border border-gray-300 rounded-md px-4 py-2 text-sm w-40">
+                        <option>Marca</option>
+                        <option>Ray-Ban</option>
+                        <option>Oakley</option>
+                        <option>Versace</option>
+                    </select>
+                    <select class="border border-gray-300 rounded-md px-4 py-2 text-sm w-40">
+                        <option>Formato</option>
+                        <option>Redondo</option>
+                        <option>Retangular</option>
+                        <option>Aviador</option>
+                    </select>
+                    <select class="border border-gray-300 rounded-md px-4 py-2 text-sm w-40">
+                        <option>Material</option>
+                        <option>Acetato</option>
+                        <option>Metal</option>
+                        <option>Mista</option>
+                    </select>
+                    <select class="border border-gray-300 rounded-md px-4 py-2 text-sm w-40">
+                        <option>Faixa de Preço</option>
+                        <option>Até R$ 300</option>
+                        <option>R$ 300 - R$ 600</option>
+                        <option>Acima de R$ 600</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Products Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <!-- Product 1 (Glasses with prescription) -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md border border-gray-100">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1591073113125-e46713c829ed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Óculos de Grau" class="w-full h-64 object-cover">
+                        <div class="absolute top-2 left-2 bg-accent text-white text-xs font-bold px-2 py-1 rounded">Novo</div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold text-neutral-800 mb-1">Óculos Vintage</h3>
+                        <p class="text-sm text-neutral-500 mb-2">Ray-Ban • Acetato</p>
+                        <div class="flex items-center mb-3">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="text-neutral-500 text-sm ml-1">(45)</span>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="block text-sm font-medium text-neutral-700 mb-1">Tipo de Lente</label>
+                            <select class="w-full border border-gray-300 rounded px-3 py-1 text-sm">
+                                <option>Visão Simples</option>
+                                <option>Multifocal</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="block text-sm font-medium text-neutral-700 mb-1">Tratamento</label>
+                            <select class="w-full border border-gray-300 rounded px-3 py-1 text-sm">
+                                <option>Nenhum (+R$0)</option>
+                                <option>Antirreflexo (+R$80)</option>
+                                <option>Filtro Azul (+R$120)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="flex justify-between items-center mt-4">
+                            <span class="text-lg font-bold text-neutral-800">R$ 459,90</span>
+                            <button class="bg-primary hover:bg-secondary text-white px-4 py-2 rounded text-sm transition duration-300">
+                                <i class="fas fa-shopping-cart mr-1"></i> Comprar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 (Sun glasses) -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md border border-gray-100">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1480&q=80" alt="Óculos de Sol" class="w-full h-64 object-cover">
+                        <div class="absolute top-2 right-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">-20%</div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold text-neutral-800 mb-1">Aviador Clássico</h3>
+                        <p class="text-sm text-neutral-500 mb-2">Ray-Ban • Metal</p>
+                        <div class="flex items-center mb-3">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="text-neutral-500 text-sm ml-1">(128)</span>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <div class="flex items-center text-sm text-neutral-700">
+                                <i class="fas fa-sun mr-1 text-accent"></i>
+                                <span>Proteção UV400</span>
+                            </div>
+                            <div class="flex items-center text-sm text-neutral-700 mt-1">
+                                <i class="fas fa-glasses mr-1 text-accent"></i>
+                                <span>Lentes Polarizadas</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-between items-center mt-4">
+                            <div>
+                                <span class="text-gray-400 line-through text-sm">R$ 599,90</span>
+                                <span class="text-lg font-bold text-neutral-800 block">R$ 479,90</span>
+                            </div>
+                            <button class="bg-primary hover:bg-secondary text-white px-4 py-2 rounded text-sm transition duration-300">
+                                <i class="fas fa-shopping-cart mr-1"></i> Comprar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 (Glasses with prescription) -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md border border-gray-100">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1591073113125-e46713c829ed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Óculos de Grau" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold text-neutral-800 mb-1">Óculos Moderno</h3>
+                        <p class="text-sm text-neutral-500 mb-2">Oakley • Mista</p>
+                        <div class="flex items-center mb-3">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="text-neutral-500 text-sm ml-1">(92)</span>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="block text-sm font-medium text-neutral-700 mb-1">Tipo de Lente</label>
+                            <select class="w-full border border-gray-300 rounded px-3 py-1 text-sm">
+                                <option>Visão Simples</option>
+                                <option>Multifocal</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="block text-sm font-medium text-neutral-700 mb-1">Tratamento</label>
+                            <select class="w-full border border-gray-300 rounded px-3 py-1 text-sm">
+                                <option>Nenhum (+R$0)</option>
+                                <option>Antirreflexo (+R$80)</option>
+                                <option>Filtro Azul (+R$120)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="flex justify-between items-center mt-4">
+                            <span class="text-lg font-bold text-neutral-800">R$ 539,90</span>
+                            <button class="bg-primary hover:bg-secondary text-white px-4 py-2 rounded text-sm transition duration-300">
+                                <i class="fas fa-shopping-cart mr-1"></i> Comprar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 4 (Sun glasses) -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md border border-gray-100">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1480&q=80" alt="Óculos de Sol" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold text-neutral-800 mb-1">Quadrados Minimalistas</h3>
+                        <p class="text-sm text-neutral-500 mb-2">Prada • Acetato</p>
+                        <div class="flex items-center mb-3">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="text-neutral-500 text-sm ml-1">(78)</span>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <div class="flex items-center text-sm text-neutral-700">
+                                <i class="fas fa-sun mr-1 text-accent"></i>
+                                <span>Proteção UV400</span>
+                            </div>
+                            <div class="flex items-center text-sm text-neutral-700 mt-1">
+                                <i class="fas fa-glasses mr-1 text-accent"></i>
+                                <span>Lentes Clássicas</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-between items-center mt-4">
+                            <span class="text-lg font-bold text-neutral-800">R$ 699,90</span>
+                            <button class="bg-primary hover:bg-secondary text-white px-4 py-2 rounded text-sm transition duration-300">
+                                <i class="fas fa-shopping-cart mr-1"></i> Comprar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold py-3 px-8 rounded-lg transition duration-300">
+                    Ver Todos os Produtos
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Virtual Try-On Section -->
+    <section class="py-16 virtual-try-on">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <h2 class="text-3xl font-bold text-white mb-4">Experimente nossos óculos virtualmente</h2>
+                    <p class="text-gray-200 mb-6">Use nossa tecnologia de Realidade Aumentada para ver como os óculos ficam em seu rosto antes de comprar. Basta ativar sua câmera e selecionar o modelo desejado.</p>
+                    <button class="bg-white hover:bg-gray-100 text-primary font-bold py-3 px-6 rounded-lg transition duration-300">
+                        <i class="fas fa-camera mr-2"></i> Experimentar Agora
+                    </button>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="relative bg-gray-800 rounded-lg overflow-hidden" style="height: 300px;">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-camera text-gray-600 text-5xl"></i>
+                        </div>
+                        <div class="absolute bottom-4 left-4 right-4 bg-black bg-opacity-50 text-white p-4 rounded">
+                            <h3 class="font-bold">Pré-visualização</h3>
+                            <p class="text-sm">Selecione um modelo para ver como fica em seu rosto.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-neutral-800 mb-4">Nossos Serviços</h2>
+                <p class="text-neutral-600 max-w-3xl mx-auto">Além de vender óculos, oferecemos uma gama completa de serviços para cuidar da sua saúde visual.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Service 1 -->
+                <div class="service-card bg-white rounded-lg shadow-md p-6 border border-gray-100">
+                    <div class="text-primary text-3xl mb-4">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-neutral-800 mb-2">Exame de Vista Completo</h3>
+                    <p class="text-neutral-600 mb-4">Avaliação precisa da sua acuidade visual com equipamentos de última geração.</p>
+                    <a href="#" class="text-primary font-medium hover:underline">Agendar Exame</a>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-white rounded-lg shadow-md p-6 border border-gray-100">
+                    <div class="text-primary text-3xl mb-4">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-neutral-800 mb-2">Consulta Oftalmológica</h3>
+                    <p class="text-neutral-600 mb-4">Diagnóstico e tratamento de doenças oculares com especialistas qualificados.</p>
+                    <a href="#" class="text-primary font-medium hover:underline">Agendar Consulta</a>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card bg-white rounded-lg shadow-md p-6 border border-gray-100">
+                    <div class="text-primary text-3xl mb-4">
+                        <i class="fas fa-glasses"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-neutral-800 mb-2">Adaptação de Lentes</h3>
+                    <p class="text-neutral-600 mb-4">Auxílio especializado na escolha e adaptação de lentes de contato.</p>
+                    <a href="#" class="text-primary font-medium hover:underline">Mais Informações</a>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card bg-white rounded-lg shadow-md p-6 border border-gray-100">
+                    <div class="text-primary text-3xl mb-4">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-neutral-800 mb-2">Ajuste e Manutenção</h3>
+                    <p class="text-neutral-600 mb-4">Ajustes precisos para melhor conforto e reparos em seus óculos.</p>
+                    <a href="#" class="text-primary font-medium hover:underline">Trazer para Ajuste</a>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-primary rounded-lg p-8 text-white">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-2/3 mb-6 md:mb-0">
+                        <h3 class="text-2xl font-bold mb-2">Agende seu Exame Online</h3>
+                        <p>Garanta sua saúde visual com um exame completo. Escolha a data e horário que melhor se encaixam na sua agenda.</p>
+                    </div>
+                    <div class="md:w-1/3 flex justify-end">
+                        <button class="bg-white hover:bg-gray-100 text-primary font-bold py-3 px-6 rounded-lg transition duration-300">
+                            Agendar Agora
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment Form (Modal) -->
+    <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden" id="appointmentModal">
+        <div class="bg-white rounded-lg w-full max-w-2xl mx-4 overflow-hidden">
+            <div class="flex justify-between items-center border-b border-gray-200 p-4">
+                <h3 class="text-xl font-bold text-neutral-800">Agendamento de Exame</h3>
+                <button onclick="closeModal()" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="p-6">
+                <form>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-neutral-700 mb-1">Nome Completo*</label>
+                            <input type="text" class="w-full border border-gray-300 rounded px-3 py-2" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-neutral-700 mb-1">Telefone*</label>
+                            <input type="tel" class="w-full border border-gray-300 rounded px-3 py-2" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-neutral-700 mb-1">E-mail</label>
+                            <input type="email" class="w-full border border-gray-300 rounded px-3 py-2">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-neutral-700 mb-1">Tipo de Serviço*</label>
+                            <select class="w-full border border-gray-300 rounded px-3 py-2" required>
+                                <option>Exame de Vista Completo</option>
+                                <option>Consulta Oftalmológica</option>
+                                <option>Adaptação de Lentes de Contato</option>
+                                <option>Ajuste de Óculos</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-neutral-700 mb-1">Data*</label>
+                            <input type="date" class="w-full border border-gray-300 rounded px-3 py-2" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-neutral-700 mb-1">Horário*</label>
+                            <select class="w-full border border-gray-300 rounded px-3 py-2" required>
+                                <option>08:00</option>
+                                <option>09:30</option>
+                                <option>11:00</option>
+                                <option>14:00</option>
+                                <option>15:30</option>
+                                <option>17:00</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-neutral-700 mb-1">Unidade*</label>
+                            <select class="w-full border border-gray-300 rounded px-3 py-2" required>
+                                <option>Shopping Central - Centro</option>
+                                <option>Praça das Árvores - Zona Sul</option>
+                                <option>Av. Comercial - Zona Norte</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-neutral-700 mb-1">Mensagem</label>
+                            <textarea class="w-full border border-gray-300 rounded px-3 py-2 h-full" rows="1"></textarea>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <button type="submit" class="bg-primary hover:bg-secondary text-white font-bold py-3 px-6 rounded-lg transition duration-300 w-full">
+                            Confirmar Agendamento
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-8 lg:mb-0 lg:pr-12">
+                    <img src="https://images.unsplash.com/photo-1581094205214-3ec1f6dc8af1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Nossa Óptica" class="rounded-lg shadow-lg w-full">
+                </div>
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl font-bold text-neutral-800 mb-4">Sobre a Visão Clara</h2>
+                    <p class="text-neutral-600 mb-4">Fundada em 2005, a Visão Clara nasceu da paixão por proporcionar aos nossos clientes não apenas uma visão nítida, mas também estilo e conforto em cada par de óculos.</p>
+                    <p class="text-neutral-600 mb-6">Com mais de 15 anos de experiência no mercado, nos orgulhamos de oferecer produtos das melhores marcas e serviços realizados por especialistas altamente qualificados.</p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-primary text-xl mt-1 mr-3"></i>
+                            <div>
+                                <h3 class="font-bold text-neutral-800">Tecnologia</h3>
+                                <p class="text-neutral-600 text-sm">Equipamentos de última geração para exames precisos.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-primary text-xl mt-1 mr-3"></i>
+                            <div>
+                                <h3 class="font-bold text-neutral-800">Especialistas</h3>
+                                <p class="text-neutral-600 text-sm">Profissionais certificados e em constante atualização.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-primary text-xl mt-1 mr-3"></i>
+                            <div>
+                                <h3 class="font-bold text-neutral-800">Variedade</h3>
+                                <p class="text-neutral-600 text-sm">Mais de 500 modelos das melhores marcas para escolher.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-primary text-xl mt-1 mr-3"></i>
+                            <div>
+                                <h3 class="font-bold text-neutral-800">Atendimento</h3>
+                                <p class="text-neutral-600 text-sm">Personalizado para atender suas necessidades visuais.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="inline-block bg-primary hover:bg-secondary text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                        Venha nos Conhecer
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-neutral-800 mb-4">O que dizem nossos clientes</h2>
+                <p class="text-neutral-600 max-w-3xl mx-auto">A satisfação dos nossos clientes é a nossa maior recompensa.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white rounded-lg shadow-md p-6 border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Ana Clara" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold text-neutral-800">Ana Clara</h4>
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-neutral-600">
+                        "Adorei meu novo óculos de grau! O atendimento foi excelente e conseguiram encontrar exatamente o que eu precisava para o meu rosto. Fiz o exame com eles também e tudo muito profissional."
+                    </p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white rounded-lg shadow-md p-6 border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/men/54.jpg" alt="Roberto Almeida" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold text-neutral-800">Roberto Almeida</h4>
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-neutral-600">
+                        "Comprei meus óculos de sol na Visão Clara e não poderia estar mais satisfeito. A qualidade é excelente e o atendimento me ajudou a escolher o melhor modelo para o formato do meu rosto. Recomendo!"
+                    </p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white rounded-lg shadow-md p-6 border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Carla Mendes" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold text-neutral-800">Carla Mendes</h4>
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-neutral-600">
+                        "A consulta foi ótima, o médico muito atencioso e explicou tudo sobre meu problema de visão. Os óculos ficaram prontos no prazo e estão perfeitos. Só tenho elogios para a equipe da Visão Clara."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog/Health Tips -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-neutral-800 mb-4">Dicas de Saúde Visual</h2>
+                <p class="text-neutral-600 max-w-3xl mx-auto">Aprenda a cuidar melhor dos seus olhos com nossos especialistas.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Article 1 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1491933382434-500287f9b54b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80" alt="Cuidados com os olhos" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-semibold text-primary mb-2 inline-block">PREVENÇÃO</span>
+                        <h3 class="text-xl font-bold text-neutral-800 mb-3">Como proteger seus olhos da luz azul dos dispositivos</h3>
+                        <p class="text-neutral-600 text-sm mb-4">A exposição prolongada à luz azul pode causar fadiga ocular e outros problemas. Saiba como proteger seus olhos...</p>
+                        <a href="#" class="text-primary font-medium text-sm hover:underline">Ler Mais</a>
+                    </div>
+                </div>
+                
+                <!-- Article 2 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1530030840919-52a9d50884e6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Óculos infantil" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-semibold text-primary mb-2 inline-block">SAÚDE INFANTIL</span>
+                        <h3 class="text-xl font-bold text-neutral-800 mb-3">Sinais de que a criança pode estar precisando de óculos</h3>
+                        <p class="text-neutral-600 text-sm mb-4">Descubra os sinais mais comuns que indicam problemas de visão em crianças e quando procurar um especialista...</p>
+                        <a href="#" class="text-primary font-medium text-sm hover:underline">Ler Mais</a>
+                    </div>
+                </div>
+                
+                <!-- Article 3 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1527613426441-4da17471b66d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80" alt="Lentes de contato" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-semibold text-primary mb-2 inline-block">LENTES DE CONTATO</span>
+                        <h3 class="text-xl font-bold text-neutral-800 mb-3">Dicas essenciais para quem está começando a usar lentes de contato</h3>
+                        <p class="text-neutral-600 text-sm mb-4">Aprenda os cuidados fundamentais para uma experiência segura e confortável com lentes de contato...</p>
+                        <a href="#" class="text-primary font-medium text-sm hover:underline">Ler Mais</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold py-3 px-8 rounded-lg transition duration-300">
+                    Ver Mais Dicas
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-neutral-800 mb-4">Entre em Contato</h2>
+                <p class="text-neutral-600 max-w-3xl mx-auto">Estamos à disposição para tirar suas dúvidas e ajudar com qualquer questão sobre seus óculos ou saúde visual.</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-8">
+                <div class="lg:w-1/2">
+                    <div class="bg-white rounded-lg shadow-md p-6 border border-gray-100">
+                        <h3 class="text-xl font-bold text-neutral-800 mb-6">Envie uma Mensagem</h3>
+                        <form>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-neutral-700 mb-1">Nome*</label>
+                                    <input type="text" class="w-full border border-gray-300 rounded px-3 py-2" required>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-neutral-700 mb-1">E-mail*</label>
+                                    <input type="email" class="w-full border border-gray-300 rounded px-3 py-2" required>
+                                </div>
+                            </div>
+                            <div class="mb-6">
+                                <label class="block text-sm font-medium text-neutral-700 mb-1">Assunto*</label>
+                                <select class="w-full border border-gray-300 rounded px-3 py-2" required>
+                                    <option>Dúvidas sobre produtos</option>
+                                    <option>Agendamento de consulta</option>
+                                    <option>Reclamação</option>
+                                    <option>Outros</option>
+                                </select>
+                            </div>
+                            <div class="mb-6">
+                                <label class="block text-sm font-medium text-neutral-700 mb-1">Mensagem*</label>
+                                <textarea class="w-full border border-gray-300 rounded px-3 py-2" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="bg-primary hover:bg-secondary text-white font-bold py-3 px-6 rounded-lg transition duration-300 w-full">
+                                Enviar Mensagem
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div class="bg-white rounded-lg shadow-md p-6 border border-gray-100 flex items-start">
+                            <i class="fas fa-map-marker-alt text-primary text-2xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-neutral-800 mb-2">Endereço</h4>
+                                <p class="text-neutral-600">Av. Principal, 1234<br>Shopping Central, Loja 56<br>São Paulo - SP</p>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-md p-6 border border-gray-100 flex items-start">
+                            <i class="fas fa-clock text-primary text-2xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-neutral-800 mb-2">Horário de Funcionamento</h4>
+                                <p class="text-neutral-600">Segunda a Sexta: 9h às 18h<br>Sábado: 9h às 14h<br>Domingo: Fechado</p>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-md p-6 border border-gray-100 flex items-start">
+                            <i class="fas fa-phone-alt text-primary text-2xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-neutral-800 mb-2">Telefone</h4>
+                                <p class="text-neutral-600">(11) 1234-5678<br>(11) 98765-4321 (WhatsApp)</p>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-md p-6 border border-gray-100 flex items-start">
+                            <i class="fas fa-envelope text-primary text-2xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-neutral-800 mb-2">E-mail</h4>
+                                <p class="text-neutral-600">contato@visaoclara.com.br<br>atendimento@visaoclara.com.br</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-md p-6 border border-gray-100">
+                        <h4 class="font-bold text-neutral-800 mb-4">Nos Encontre</h4>
+                        <div class="h-64 bg-gray-200 rounded flex items-center justify-center">
+                            <i class="fas fa-map text-gray-400 text-4xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Float Button -->
+    <div class="fixed bottom-6 right-6 z-40">
+        <a href="https://wa.me/5511987654321" target="_blank" class="bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition duration-300">
+            <i class="fab fa-whatsapp text-2xl"></i>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <img src="https://via.placeholder.com/120x50.png?text=Visão+Clara+Logo" alt="Visão Clara Logo" class="h-10 mb-4">
+                    <p class="text-gray-400 text-sm">Cuidando da sua visão com tecnologia, estilo e profissionalismo desde 2005.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Links Rápidos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white text-sm">Início</a></li>
+                        <li><a href="#products" class="text-gray-400 hover:text-white text-sm">Óculos</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white text-sm">Serviços</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white text-sm">Sobre Nós</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white text-sm">Contato</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Nossas Políticas</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white text-sm">Política de Privacidade</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white text-sm">Termos de Serviço</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white text-sm">Política de Trocas</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white text-sm">Garantia dos Produtos</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Newsletter</h4>
+                    <p class="text-gray-400 text-sm mb-4">Assine nossa newsletter para receber promoções e dicas de saúde visual.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Seu e-mail" class="bg-neutral-700 text-white px-4 py-2 rounded-l text-sm w-full focus:outline-none">
+                        <button type="submit" class="bg-primary hover:bg-secondary px-4 py-2 rounded-r text-sm transition duration-300">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-6 text-sm text-gray-400">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p>© 2023 Visão Clara Óptica. Todos os direitos reservados.</p>
+                    <div class="flex space-x-6 mt-4 md:mt-0">
+                        <img src="https://via.placeholder.com/50x30.png?text=Visa" alt="Visa" class="h-6">
+                        <img src="https://via.placeholder.com/50x30.png?text=Master" alt="Mastercard" class="h-6">
+                        <img src="https://via.placeholder.com/50x30.png?text=Amex" alt="American Express" class="h-6">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple modal functions
+        function openModal() {
+            document.getElementById('appointmentModal').classList.remove('hidden');
+        }
+        
+        function closeModal() {
+            document.getElementById('appointmentModal').classList.add('hidden');
+        }
+        
+        // Hero slider simulation
+        let currentSlide = 0;
+        const heroSlides = [
+            "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1500&q=80",
+            "https://images.unsplash.com/photo-1511499767150-a48a237f0083?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1480&q=80",
+            "https://images.unsplash.com/photo-1572635196237-14b3f281503f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1480&q=80"
+        ];
+        
+        function changeHeroSlide() {
+            currentSlide = (currentSlide + 1) % heroSlides.length;
+            document.querySelector('.hero-slide').style.backgroundImage = `url('${heroSlides[currentSlide]}')`;
+        }
+        
+        setInterval(changeHeroSlide, 5000);
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add to cart animation
+        document.querySelectorAll('button').forEach(button => {
+            if (button.innerText.includes('Comprar')) {
+                button.addEventListener('click', function() {
+                    const cartIcon = document.querySelector('.fa-shopping-cart');
+                    const cartCounter = document.querySelector('.fa-shopping-cart + span');
+                    
+                    // Animate cart icon
+                    cartIcon.classList.add('animate-bounce');
+                    setTimeout(() => {
+                        cartIcon.classList.remove('animate-bounce');
+                    }, 1000);
+                    
+                    // Update counter
+                    if (cartCounter) {
+                        let currentCount = parseInt(cartCounter.textContent);
+                        cartCounter.textContent = currentCount + 1;
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
